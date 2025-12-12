@@ -1,0 +1,81 @@
+{
+  "mod_elements": [
+    {
+      "name": "Remove",
+      "type": "command",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "remove",
+      "metadata": {
+        "files": [
+          "src/main/java/oas/world/zone_cleaner/command/RemoveCommand.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "commands.zone_cleaner.stop": "§cEmergency stop: %s task(s) cancelled.",
+      "commands.zone_cleaner.error.block_not_found": "§cBlock not found: %s",
+      "commands.zone_cleaner.error.entity_not_found": "§cEntity type not found: %s",
+      "commands.zone_cleaner.error.generic": "§cError: %s",
+      "commands.zone_cleaner.start.block": "§eStarting removal (Target: %s, Area: %s blocks)...",
+      "commands.zone_cleaner.progress": "§6%s%% §7(Scan:%s | Rem:%s | Left:%s)",
+      "commands.zone_cleaner.finish.block": "§aDone! §7%s blocks removed. (/remove undo to cancel)",
+      "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Operation complete. Total removed: %s",
+      "commands.zone_cleaner.finish.entity": "§aCleaning complete! %s entities removed.",
+      "commands.zone_cleaner.undo.empty": "§cNo operation to undo (History empty).",
+      "commands.zone_cleaner.undo.start": "§eUndoing (%s blocks to restore)...",
+      "commands.zone_cleaner.undo.progress": "§6Undoing: §e%s%% §7(%s/%s)",
+      "commands.zone_cleaner.undo.finish": "§aUndo complete!"
+    },
+    "fr_fr": {
+      "commands.zone_cleaner.error.block_not_found": "§cBloc introuvable : %s",
+      "commands.zone_cleaner.error.entity_not_found": "§cType d\u0027entité introuvable : %s",
+      "commands.zone_cleaner.error.generic": "§cErreur : %s",
+      "commands.zone_cleaner.start.block": "§eDémarrage suppression (Cible : %s, Zone : %s blocs)...",
+      "commands.zone_cleaner.progress": "§6%s%% §7(Vus:%s | Suppr:%s | Reste:%s)",
+      "commands.zone_cleaner.finish.block": "§aTerminé ! §7%s blocs supprimés. (/remove undo pour annuler)",
+      "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Suppression terminée. Total : %s",
+      "commands.zone_cleaner.finish.entity": "§aNettoyage terminé ! %s entités supprimées.",
+      "commands.zone_cleaner.undo.empty": "§cAucune opération à annuler (Historique vide).",
+      "commands.zone_cleaner.undo.start": "§eAnnulation en cours (%s blocs à restaurer)...",
+      "commands.zone_cleaner.undo.progress": "§6Annulation : §e%s%% §7(%s/%s)",
+      "commands.zone_cleaner.stop": "§cArrêt d\u0027urgence : %s tâche(s) annulée(s).",
+      "commands.zone_cleaner.undo.finish": "§aAnnulation terminée !"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/oas/world/zone_cleaner/ZoneCleanerMod.java",
+      "src/main/resources/pack.mcmeta"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "zone_cleaner",
+    "modName": "Zone Cleaner",
+    "version": "3.0.1",
+    "description": "A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature.",
+    "author": "Dreyka Oas",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.8",
+    "credits": "Made with MCreator. Optimized for high-performance servers.",
+    "modElementsPackage": "oas.world.zone_cleaner"
+  },
+  "mcreatorVersion": 202500345720
+}

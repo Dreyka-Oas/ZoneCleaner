@@ -1,0 +1,15 @@
+{
+  "commands.zone_cleaner.stop": "§cEmergency stop: %s task(s) cancelled.",
+  "commands.zone_cleaner.error.block_not_found": "§cBlock not found: %s",
+  "commands.zone_cleaner.error.entity_not_found": "§cEntity type not found: %s",
+  "commands.zone_cleaner.error.generic": "§cError: %s",
+  "commands.zone_cleaner.start.block": "§eStarting removal (Target: %s, Area: %s blocks)...",
+  "commands.zone_cleaner.progress": "§6%s%% §7(Scan:%s | Rem:%s | Left:%s)",
+  "commands.zone_cleaner.finish.block": "§aDone! §7%s blocks removed. (/remove undo to cancel)",
+  "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Operation complete. Total removed: %s",
+  "commands.zone_cleaner.finish.entity": "§aCleaning complete! %s entities removed.",
+  "commands.zone_cleaner.undo.empty": "§cNo operation to undo (History empty).",
+  "commands.zone_cleaner.undo.start": "§eUndoing (%s blocks to restore)...",
+  "commands.zone_cleaner.undo.progress": "§6Undoing: §e%s%% §7(%s/%s)",
+  "commands.zone_cleaner.undo.finish": "§aUndo complete!"
+}

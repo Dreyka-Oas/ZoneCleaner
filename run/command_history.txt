@@ -1,0 +1,34 @@
+/
+/remove block
+/remove block 150.
+/remove block 15.063 56 5.094
+/remove block 15.063 56 5.094 6.868 65.282 -8.1
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 dirt
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 "dirt"
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 dirt
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 "dirt"
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 dirt
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 "dirt,stone"
+/give Dev dirt
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 "dirt,stone"
+/remove block 15.063 56 5.094 6.868 65.282 -8.1 dirt
+/remove block 15.063 50 5.094 6.868 65.282 -8.1 dirt
+/remove block 15.063 50 5.094 6.868 75 -8.1 dirt
+/remove block ~ ~ ~ ~100 ~100 ~100 minecraft:sandstone
+/remove block ~ ~ ~ ~100 ~100 ~100 sandstone
+/remove block ~ ~ ~ ~100 ~100 ~100 minecraft:sandstone
+/remove block ~ ~ ~ ~100 ~-100 ~100 minecraft:sandstone
+//remove block ~ ~ ~ ~200 ~-200 ~200 minecraft:sandstone
+/remove block ~ ~ ~ ~200 ~-200 ~200 minecraft:sandstone
+/remove block ~ ~ ~ ~200 ~-100 ~200 minecraft:sandstone
+/remove block ~ ~ ~ ~100 ~-128 ~100 minecraft:sandstone
+/remove block ~ ~ ~ ~100 ~-110 ~100 minecraft:sandstone
+/remove undo
+/remove block ~ ~ ~ ~100 ~-110 ~100 minecraft:sandstone
+/remove undo
+/remove entity ~ ~ ~ ~100 ~-64 ~100 minecraft:camel
+/remove entity ~ ~ ~ ~100 ~-64 ~100 minecraft:camelz
+/remove entity ~ ~ ~ ~100 ~-64 ~100 minecraft:camel
+/remove undo
+/remove block ~ ~ ~ ~100 ~-110 ~100 minecraft:sandstone
+/remove block ~ ~ ~ ~100 ~-110 ~1000000 minecraft:sandstone
