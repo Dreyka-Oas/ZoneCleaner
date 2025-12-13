@@ -69,6 +69,7 @@
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",
     "serverSideOnly": false,
+    "modPicture": "logo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
