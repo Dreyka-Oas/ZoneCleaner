@@ -1,14 +1,16 @@
 modLoader="javafml"
 loaderVersion="[4,)"
-license="Not specified"
+license="MIT License"
 
 [[mods]]
 modId="zone_cleaner"
-version="1.0.0"
+version="3.0.1"
 displayName="Zone Cleaner"
 displayURL="https://mcreator.net"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="MCreator"
+logoFile="logo.png"
+credits="Made with MCreator. Optimized for high-performance servers."
+authors="Dreyka Oas"
+description="A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration

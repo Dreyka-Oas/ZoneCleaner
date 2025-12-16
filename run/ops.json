@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "a3b15e69-8684-39d5-9736-98bd5f561818",
+    "name": "DreykaOas",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "380df991-f603-344c-a090-369bad2a924a",
+    "name": "Dev",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

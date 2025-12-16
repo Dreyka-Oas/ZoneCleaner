@@ -32,3 +32,17 @@
 /remove undo
 /remove block ~ ~ ~ ~100 ~-110 ~100 minecraft:sandstone
 /remove block ~ ~ ~ ~100 ~-110 ~1000000 minecraft:sandstone
+/pos1
+/pos_start
+/pos_end
+/remove block pos_start pos_end
+/remove block pos_start pos_end minecraft:sandstone
+/pos_start
+/pos_end
+/remove block pos_start pos_end minecraft:sandstone
+/pos_start
+/pos_end
+/remove block pos_start pos_end minecraft:sandstone
+/pos_start
+/pos_end
+/remove block pos_start pos_end dirt

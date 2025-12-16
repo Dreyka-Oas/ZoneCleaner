@@ -1,0 +1,88 @@
+{
+  "mod_elements": [
+    {
+      "name": "Remove",
+      "type": "command",
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "remove",
+      "metadata": {
+        "files": [
+          "src/main/java/oas/world/zone_cleaner/command/RemoveCommand.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "commands.zone_cleaner.pos.set.start": "§ePosition 1 (Start) set to: §f%s",
+      "commands.zone_cleaner.pos.set.end": "§ePosition 2 (End) set to: §f%s",
+      "commands.zone_cleaner.error.pos_not_set": "§cError: Positions not set. Use /pos_start and /pos_end first.",
+      "commands.zone_cleaner.stop": "§cEmergency stop: %s task(s) cancelled.",
+      "commands.zone_cleaner.error.block_not_found": "§cBlock not found: %s",
+      "commands.zone_cleaner.error.entity_not_found": "§cEntity type not found: %s",
+      "commands.zone_cleaner.error.generic": "§cError: %s",
+      "commands.zone_cleaner.start.block": "§eStarting removal (Target: %s, Area: %s blocks)...",
+      "commands.zone_cleaner.progress": "§6%s%% §7(Scan:%s | Rem:%s | Left:%s)",
+      "commands.zone_cleaner.finish.block": "§aDone! §7%s blocks removed. (/remove undo to cancel)",
+      "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Operation complete. Total removed: %s",
+      "commands.zone_cleaner.finish.entity": "§aCleaning complete! %s entities removed.",
+      "commands.zone_cleaner.undo.empty": "§cNo operation to undo (History empty).",
+      "commands.zone_cleaner.undo.start": "§eUndoing (%s blocks to restore)...",
+      "commands.zone_cleaner.undo.progress": "§6Undoing: §e%s%% §7(%s/%s)",
+      "commands.zone_cleaner.undo.finish": "§aUndo complete!"
+    },
+    "fr_fr": {
+      "commands.zone_cleaner.pos.set.start": "§ePosition 1 (Départ) définie en : §f%s",
+      "commands.zone_cleaner.pos.set.end": "§ePosition 2 (Fin) définie en : §f%s",
+      "commands.zone_cleaner.error.pos_not_set": "§cErreur : Positions non définies. Utilisez /pos_start et /pos_end d\u0027abord.",
+      "commands.zone_cleaner.stop": "§cArrêt d\u0027urgence : %s tâche(s) annulée(s).",
+      "commands.zone_cleaner.error.block_not_found": "§cBloc introuvable : %s",
+      "commands.zone_cleaner.error.entity_not_found": "§cType d\u0027entité introuvable : %s",
+      "commands.zone_cleaner.error.generic": "§cErreur : %s",
+      "commands.zone_cleaner.start.block": "§eDémarrage du nettoyage (Cible : %s, Zone : %s blocs)...",
+      "commands.zone_cleaner.progress": "§6%s%% §7(Scan:%s | Suppr:%s | Reste:%s)",
+      "commands.zone_cleaner.finish.block": "§aTerminé ! §7%s blocs supprimés. (/remove undo pour annuler)",
+      "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Opération terminée. Total supprimé : %s",
+      "commands.zone_cleaner.finish.entity": "§aNettoyage terminé ! %s entités supprimées.",
+      "commands.zone_cleaner.undo.empty": "§cAucune opération à annuler (Historique vide).",
+      "commands.zone_cleaner.undo.start": "§eAnnulation en cours (%s blocs à restaurer)...",
+      "commands.zone_cleaner.undo.progress": "§6Restauration : §e%s%% §7(%s/%s)",
+      "commands.zone_cleaner.undo.finish": "§aAnnulation terminée !"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/oas/world/zone_cleaner/ZoneCleanerMod.java",
+      "src/main/resources/pack.mcmeta"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "zone_cleaner",
+    "modName": "Zone Cleaner",
+    "version": "3.0.1",
+    "description": "A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature.",
+    "author": "Dreyka Oas",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "modPicture": "logo",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.8",
+    "credits": "Made with MCreator. Optimized for high-performance servers.",
+    "modElementsPackage": "oas.world.zone_cleaner"
+  },
+  "mcreatorVersion": 202500345720
+}
