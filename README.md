@@ -2,6 +2,7 @@
 ### The Lag-Free World Editor
 
 [![Modrinth](https://img.shields.io/badge/Modrinth-Available-green?style=for-the-badge&logo=modrinth)](https://modrinth.com/mod/zone-cleaner)
+[![CurseForge](https://img.shields.io/badge/CurseForge-Available-orange?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/zone-cleaner)
 [![NeoForge](https://img.shields.io/badge/NeoForge-1.21.8-blue?style=for-the-badge)](https://neoforged.net/)
 [![GitHub](https://img.shields.io/badge/GitHub-Source-black?style=for-the-badge&logo=github)](https://github.com/Dreyka-Oas/ZoneCleaner)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
