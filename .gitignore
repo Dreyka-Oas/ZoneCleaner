@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+build/
+.gradle/
+run/
+out/
+bin/
+temp/
+*.zip
+backups/
+.*/
+tmp/
+**/tmp/
