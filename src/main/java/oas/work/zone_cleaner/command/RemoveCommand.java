@@ -31,18 +31,15 @@ import java.util.*;
 @EventBusSubscriber
 public class RemoveCommand {
 
-    // Liste des tâches actives
     private static final List<ITickableTask> activeTasks = new ArrayList<>();
     private static final LinkedList<List<BlockSnapshot>> undoHistoryStack = new LinkedList<>();
     private static final int MAX_UNDO_HISTORY = 5;
     
-    // Paramètres de performance
-    private static final long MIN_TIME_SLICE = 500_000L;   // Minimum 0.5ms de travail
+    private static final long MIN_TIME_SLICE = 500_000L;
 
     private static final Map<UUID, BlockPos> startPositions = new HashMap<>();
     private static final Map<UUID, BlockPos> endPositions = new HashMap<>();
 
-    // --- SYSTEME DE MESURE DE LAG MAISON ---
     private static long tickStartNanos = 0L;
     private static float currentMSPT = 0.0f;
 
@@ -72,9 +69,6 @@ public class RemoveCommand {
         return currentMSPT;
     }
 
-    // --- GESTION DES TACHES PAR JOUEUR ---
-    
-    // Vérifie si un joueur a déjà une tâche en cours
     private static boolean hasActiveTask(ServerPlayer player) {
         for (ITickableTask task : activeTasks) {
             if (task.getOwner().getUUID().equals(player.getUUID())) {
@@ -201,7 +195,6 @@ public class RemoveCommand {
         return Double.parseDouble(input);
     }
 
-    // MODIFICATION : Stop uniquement les tâches du joueur
     private static int executeStop(CommandContext<CommandSourceStack> arguments) {
         try {
             ServerPlayer player = arguments.getSource().getPlayerOrException();
@@ -220,7 +213,6 @@ public class RemoveCommand {
             arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.stop", count), true);
             return 1;
         } catch (Exception e) {
-             // Fallback pour la console : stop tout
              int count = activeTasks.size();
              activeTasks.clear();
              arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.stop", count), true);
@@ -236,7 +228,6 @@ public class RemoveCommand {
             
             if (player == null) return 0;
 
-            // VERIFICATION : Le joueur a-t-il déjà une tâche ?
             if (hasActiveTask(player)) {
                 arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.already_running"));
                 return 0;
@@ -315,7 +306,6 @@ public class RemoveCommand {
         ServerPlayer player = arguments.getSource().getEntity() instanceof ServerPlayer sp ? sp : null;
         if (player == null) return 0;
 
-        // VERIFICATION : Le joueur a-t-il déjà une tâche ?
         if (hasActiveTask(player)) {
             arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.already_running"));
             return 0;
@@ -404,10 +394,9 @@ public class RemoveCommand {
         return 1;
     }
 
-    // --- INTERFACE MODIFIEE : On doit savoir qui est le propriétaire ---
     private interface ITickableTask {
         boolean processTick();
-        ServerPlayer getOwner(); // Nouvelle méthode
+        ServerPlayer getOwner();
     }
 
     private record BlockSnapshot(long posLong, BlockState state) {}
