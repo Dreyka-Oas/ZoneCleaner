@@ -1,0 +1,10 @@
+/pos_start
+/pos_end
+/remove block pos_start pos_end
+/remove block pos_start pos_end minecraft:sandstone
+/pos_start
+/pos_end
+/remove block pos_start pos_end minecraft:sandstone
+/pos_start
+/pos_end
+/remove block pos_start pos_end minecraft:water

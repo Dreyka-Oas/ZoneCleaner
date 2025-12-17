@@ -1,0 +1,19 @@
+{
+  "commands.zone_cleaner.pos.set.start": "§ePosition 1 (Départ) définie en : §f%s",
+  "commands.zone_cleaner.pos.set.end": "§ePosition 2 (Fin) définie en : §f%s",
+  "commands.zone_cleaner.error.pos_not_set": "§cErreur : Positions non définies. Utilisez /pos_start et /pos_end d\u0027abord.",
+  "commands.zone_cleaner.stop": "§cArrêt d\u0027urgence : %s tâche(s) annulée(s).",
+  "commands.zone_cleaner.error.block_not_found": "§cBloc introuvable : %s",
+  "commands.zone_cleaner.error.entity_not_found": "§cType d\u0027entité introuvable : %s",
+  "commands.zone_cleaner.error.generic": "§cErreur : %s",
+  "commands.zone_cleaner.start.block": "§eDémarrage du nettoyage (Cible : %s, Zone : %s blocs)...",
+  "commands.zone_cleaner.progress": "§6%s%% §7(Scan:%s | Suppr:%s | Reste:%s)",
+  "commands.zone_cleaner.finish.block": "§aTerminé ! §7%s blocs supprimés. (/remove undo pour annuler)",
+  "commands.zone_cleaner.finish.chat": "§a[ZoneCleaner] Opération terminée. Total supprimé : %s",
+  "commands.zone_cleaner.finish.entity": "§aNettoyage terminé ! %s entités supprimées.",
+  "commands.zone_cleaner.undo.empty": "§cAucune opération à annuler (Historique vide).",
+  "commands.zone_cleaner.undo.start": "§eAnnulation en cours (%s blocs à restaurer)...",
+  "commands.zone_cleaner.undo.progress": "§6Restauration : §e%s%% §7(%s/%s)",
+  "commands.zone_cleaner.undo.finish": "§aAnnulation terminée !",
+  "commands.zone_cleaner.error.already_running": "§cErreur : Vous avez déjà une tâche en cours ! Utilisez /remove stop d\u0027abord."
+}

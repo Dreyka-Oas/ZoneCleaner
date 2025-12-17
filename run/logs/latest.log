@@ -1,0 +1,109 @@
+[17Dec2025 12:51:51.307] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserverdev, --gameDir, ., --fml.fmlVersion, 4.0.41, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.190, --fml.neoFormVersion, 20240808.144430]
+[17Dec2025 12:51:51.311] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.8+9-LTS
+[17Dec2025 12:51:51.312] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.8 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[17Dec2025 12:51:51.479] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserverdev
+[17Dec2025 12:51:51.602] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.190, --assetIndex, 17, --assetsDir, C:\\Users\\perso\\.mcreator\\gradle\\caches\\neoformruntime\\assets, --gameDir, ., --fml.fmlVersion, 4.0.41, --fml.mcVersion, 1.21.1[17Dec2025 12:51:51.971] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[17Dec2025 12:51:51.972] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.190 (neoforge)
+		Zone Cleaner 3.0.1 (zone_cleaner)
+[17Dec2025 12:51:52.867] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserverdev' with arguments [--gameDir, .]
+[17Dec2025 12:51:55.312] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[17Dec2025 12:52:01.953] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[17Dec2025 12:52:01.955] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[17Dec2025 12:52:01.958] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[17Dec2025 12:52:01.959] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[17Dec2025 12:52:01.960] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[17Dec2025 12:52:02.036] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.190, for MC 1.21.1
+[17Dec2025 12:52:02.412] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[17Dec2025 12:52:02.530] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/O:/Minecraft/Mods/Zone%20Cleaner/1.21.1/build/moddev/artifacts/neoforge-21.1.190.jar%23125!/assets/.mcassetsroot' uses unexpected schema
+[17Dec2025 12:52:02.530] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/O:/Minecraft/Mods/Zone%20Cleaner/1.21.1/build/moddev/artifacts/neoforge-21.1.190.jar%23125!/data/.mcassetsroot' uses unexpected schema
+[17Dec2025 12:52:03.185] [main/INFO] [net.minecraft.server.Main/]: No existing world data, creating new world
+[17Dec2025 12:52:03.189] [main/WARN] [net.minecraft.server.dedicated.DedicatedServerProperties/]: Failed to parse level-type default, defaulting to minecraft:normal
+[17Dec2025 12:52:03.682] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1290 recipes
+[17Dec2025 12:52:03.844] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1399 advancements
+[17Dec2025 12:52:04.744] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.21.1
+[17Dec2025 12:52:04.745] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[17Dec2025 12:52:04.745] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: CREATIVE
+[17Dec2025 12:52:04.745] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[17Dec2025 12:52:04.911] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25463
+[17Dec2025 12:52:05.048] [Server thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using default channel type
+[17Dec2025 12:52:05.095] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17Dec2025 12:52:05.095] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[17Dec2025 12:52:05.095] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[17Dec2025 12:52:05.096] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[17Dec2025 12:52:05.141] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[17Dec2025 12:52:07.348] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[17Dec2025 12:52:07.377] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 2%
+[17Dec2025 12:52:07.855] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 2%
+[17Dec2025 12:52:08.351] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 18%
+[17Dec2025 12:52:08.866] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 51%
+[17Dec2025 12:52:09.350] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 51%
+[17Dec2025 12:52:09.512] [Server thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2164 ms
+[17Dec2025 12:52:09.513] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (4.401s)! For help, type "help"
+[17Dec2025 12:52:09.544] [Server thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[17Dec2025 12:52:09.556] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[17Dec2025 12:58:07.144] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[/[::1]:64886] logged in with entity id 9 at (297.5, 70.0, -215.5)
+[17Dec2025 12:58:07.175] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[17Dec2025 12:58:16.439] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Made Dev a server operator
+[17Dec2025 12:58:59.127] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Starting removal (Target: minecraft:water, Area: 1420416 blocks)...]
+[17Dec2025 12:59:16.175] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[17Dec2025 12:59:16.176] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[17Dec2025 12:59:22.611] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping the server
+[17Dec2025 12:59:22.658] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[17Dec2025 12:59:22.659] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[17Dec2025 12:59:22.660] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[17Dec2025 12:59:22.752] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[17Dec2025 12:59:22.794] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[17Dec2025 12:59:22.802] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[17Dec2025 12:59:22.813] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[17Dec2025 12:59:22.814] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17Dec2025 12:59:22.815] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17Dec2025 12:59:22.815] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+Manager/]: Loaded 1290 recipes
+[17Dec2025 12:57:45.759] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1399 advancements
+[17Dec2025 12:57:46.227] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[17Dec2025 12:57:46.227] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[17Dec2025 12:57:46.615] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[17Dec2025 12:57:46.778] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Préparation de la zone d'apparition : 0 %
+[17Dec2025 12:57:46.861] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[17Dec2025 12:57:46.871] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 250 ms
+[17Dec2025 12:57:46.924] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 32, from 10
+[17Dec2025 12:57:46.924] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 5, from 0
+[17Dec2025 12:57:47.563] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:ff4a430e] logged in with entity id 1 at (-276.49576873905374, 56.0, 128.52947592065777)
+[17Dec2025 12:57:47.639] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev a rejoint la partie
+[17Dec2025 12:57:48.035] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 13 advancements
+[17Dec2025 12:57:51.213] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[17Dec2025 12:57:51.246] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:overworld
+[17Dec2025 12:57:51.520] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_nether
+[17Dec2025 12:57:51.520] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_end
+[17Dec2025 12:58:01.913] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[17Dec2025 12:58:01.919] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:overworld
+[17Dec2025 12:58:02.344] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_nether
+[17Dec2025 12:58:02.345] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_end
+[17Dec2025 12:58:02.923] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Déconnecté(e)
+[17Dec2025 12:58:02.923] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev a quitté la partie
+[17Dec2025 12:58:02.936] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[17Dec2025 12:58:02.964] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[17Dec2025 12:58:02.966] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[17Dec2025 12:58:02.966] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[17Dec2025 12:58:03.552] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:overworld
+[17Dec2025 12:58:03.588] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_nether
+[17Dec2025 12:58:03.592] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Nouveau monde]'/minecraft:the_end
+[17Dec2025 12:58:03.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Nouveau monde): All chunks are saved
+[17Dec2025 12:58:03.601] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17Dec2025 12:58:03.601] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17Dec2025 12:58:03.601] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[17Dec2025 12:58:06.289] [Render thread/INFO] [net.minecraft.client.gui.screens.ConnectScreen/]: Connecting to localhost, 25463
+[17Dec2025 12:58:07.580] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
+[17Dec2025 12:58:16.470] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Server : Dev est maintenant opérateur du serveur]
+[17Dec2025 12:58:23.890] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Position 1 (Start) set to: 297, 69, -218
+[17Dec2025 12:58:29.734] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Unable to play empty soundEvent: minecraft:entity.cod.ambient
+[17Dec2025 12:58:41.423] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 11 advancements
+[17Dec2025 12:58:47.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Position 2 (End) set to: 512, 46, 55
+[17Dec2025 12:58:59.144] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Starting removal (Target: minecraft:water, Area: 1420416 blocks)...
+[17Dec2025 12:59:02.511] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [ZoneCleaner] Operation complete. Total removed: 618218
+[17Dec2025 12:59:18.119] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
