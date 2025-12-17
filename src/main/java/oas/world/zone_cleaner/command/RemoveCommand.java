@@ -8,7 +8,6 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -42,6 +41,79 @@ public class RemoveCommand {
 
     private static long tickStartNanos = 0L;
     private static float currentMSPT = 0.0f;
+
+    // --- SYSTÈME DE TRADUCTION INTÉGRÉ (SERVEUR SEULEMENT) ---
+    private static final Map<String, Map<String, String>> LANG_MAP = new HashMap<>();
+
+    static {
+        // --- FRANÇAIS ---
+        Map<String, String> fr = new HashMap<>();
+        fr.put("commands.zone_cleaner.pos.set.start", "§aPosition de départ définie sur : §e%s");
+        fr.put("commands.zone_cleaner.pos.set.end", "§aPosition de fin définie sur : §e%s");
+        fr.put("commands.zone_cleaner.stop", "§6Arrêt des tâches. %d tâche(s) arrêtée(s).");
+        fr.put("commands.zone_cleaner.error.already_running", "§cUne tâche est déjà en cours. Attendez la fin ou faites /remove stop.");
+        fr.put("commands.zone_cleaner.error.pos_not_set", "§cErreur : Les positions start/end ne sont pas définies.");
+        fr.put("commands.zone_cleaner.error.generic", "§cErreur : %s");
+        fr.put("commands.zone_cleaner.error.block_not_found", "§cBloc introuvable ou invalide : %s");
+        fr.put("commands.zone_cleaner.start.block", "§aDémarrage du nettoyage de §e%s §a(%d blocs)...");
+        fr.put("commands.zone_cleaner.undo.empty", "§cAucun historique d'annulation disponible.");
+        fr.put("commands.zone_cleaner.undo.start", "§6Annulation de la dernière opération (%d blocs)...");
+        fr.put("commands.zone_cleaner.error.entity_not_found", "§cType d'entité introuvable : %s");
+        fr.put("commands.zone_cleaner.finish.entity", "§aSuppression terminée : %d entités retirées.");
+        fr.put("commands.zone_cleaner.progress", "§eProgression : %d%% (%d/%d)");
+        fr.put("commands.zone_cleaner.finish.block", "§aOpération terminée. %d blocs retirés.");
+        fr.put("commands.zone_cleaner.finish.chat", "§a[ZoneCleaner] Tâche finie. %d blocs affectés.");
+        fr.put("commands.zone_cleaner.undo.progress", "§eAnnulation : %d%% (%d/%d)");
+        fr.put("commands.zone_cleaner.undo.finish", "§aAnnulation terminée avec succès.");
+        fr.put("commands.zone_cleaner.error.player_only", "§cVous devez être un joueur pour utiliser cette commande.");
+        LANG_MAP.put("fr_fr", fr);
+
+        // --- ANGLAIS (Défaut) ---
+        Map<String, String> en = new HashMap<>();
+        en.put("commands.zone_cleaner.pos.set.start", "§aStart position set to: §e%s");
+        en.put("commands.zone_cleaner.pos.set.end", "§aEnd position set to: §e%s");
+        en.put("commands.zone_cleaner.stop", "§6Stopping tasks. %d task(s) stopped.");
+        en.put("commands.zone_cleaner.error.already_running", "§cA task is already running. Wait or use /remove stop.");
+        en.put("commands.zone_cleaner.error.pos_not_set", "§cError: Start/End positions are not set.");
+        en.put("commands.zone_cleaner.error.generic", "§cError: %s");
+        en.put("commands.zone_cleaner.error.block_not_found", "§cBlock not found or invalid: %s");
+        en.put("commands.zone_cleaner.start.block", "§aStarting removal of §e%s §a(%d blocks)...");
+        en.put("commands.zone_cleaner.undo.empty", "§cNo undo history available.");
+        en.put("commands.zone_cleaner.undo.start", "§6Undoing last operation (%d blocks)...");
+        en.put("commands.zone_cleaner.error.entity_not_found", "§cEntity type not found: %s");
+        en.put("commands.zone_cleaner.finish.entity", "§aRemoval finished: %d entities removed.");
+        en.put("commands.zone_cleaner.progress", "§eProgress: %d%% (%d/%d)");
+        en.put("commands.zone_cleaner.finish.block", "§aOperation complete. %d blocks removed.");
+        en.put("commands.zone_cleaner.finish.chat", "§a[ZoneCleaner] Task finished. %d blocks affected.");
+        en.put("commands.zone_cleaner.undo.progress", "§eUndoing: %d%% (%d/%d)");
+        en.put("commands.zone_cleaner.undo.finish", "§aUndo completed successfully.");
+        en.put("commands.zone_cleaner.error.player_only", "§cYou must be a player to use this command.");
+        LANG_MAP.put("en_us", en);
+    }
+
+    // Récupère le message selon la langue du joueur (ServerPlayer)
+    private static Component getMsg(ServerPlayer player, String key, Object... args) {
+        String lang = "en_us"; // Défaut
+        if (player != null) {
+            lang = player.clientInformation().language();
+        }
+
+        Map<String, String> dict = LANG_MAP.getOrDefault(lang, LANG_MAP.get("en_us"));
+        String text = dict.getOrDefault(key, key);
+
+        try {
+            return Component.literal(String.format(text, args));
+        } catch (Exception e) {
+            return Component.literal(text);
+        }
+    }
+
+    // Surcharge pour CommandSourceStack
+    private static Component getMsg(CommandSourceStack source, String key, Object... args) {
+        return getMsg(source.getEntity() instanceof ServerPlayer p ? p : null, key, args);
+    }
+
+    // --- EVENT TICK ---
 
     @SubscribeEvent
     public static void onServerTickPre(ServerTickEvent.Pre event) {
@@ -78,14 +150,7 @@ public class RemoveCommand {
         return false;
     }
 
-    private static Component getMsg(String key, Object... args) {
-        String translation = Language.getInstance().getOrDefault(key);
-        try {
-            return Component.literal(String.format(translation, args));
-        } catch (Exception e) {
-            return Component.literal(translation);
-        }
-    }
+    // --- AUTO-COMPLÉTION INTELLIGENTE ---
 
     private static final SuggestionProvider<CommandSourceStack> SMART_SUGGESTIONS = (context, builder) -> {
         String fullInput = builder.getRemaining();
@@ -139,6 +204,8 @@ public class RemoveCommand {
         return builder.buildFuture();
     };
 
+    // --- ENREGISTREMENT COMMANDES ---
+
     @SubscribeEvent
     public static void registerCommand(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("pos_start")
@@ -165,6 +232,8 @@ public class RemoveCommand {
                 .executes(RemoveCommand::executeStop)));
     }
 
+    // --- LOGIQUE COMMANDES ---
+
     private static int executeSetPos(CommandContext<CommandSourceStack> context, boolean isStart) {
         try {
             ServerPlayer player = context.getSource().getPlayerOrException();
@@ -173,14 +242,14 @@ public class RemoveCommand {
 
             if (isStart) {
                 startPositions.put(uuid, pos);
-                context.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.pos.set.start", pos.toShortString()), false);
+                context.getSource().sendSuccess(() -> getMsg(context.getSource(), "commands.zone_cleaner.pos.set.start", pos.toShortString()), false);
             } else {
                 endPositions.put(uuid, pos);
-                context.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.pos.set.end", pos.toShortString()), false);
+                context.getSource().sendSuccess(() -> getMsg(context.getSource(), "commands.zone_cleaner.pos.set.end", pos.toShortString()), false);
             }
             return 1;
         } catch (Exception e) {
-            context.getSource().sendFailure(Component.literal("Vous devez être un joueur pour utiliser cette commande."));
+            context.getSource().sendFailure(getMsg(context.getSource(), "commands.zone_cleaner.error.player_only"));
             return 0;
         }
     }
@@ -210,12 +279,12 @@ public class RemoveCommand {
             }
             
             final int count = removedCount;
-            arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.stop", count), true);
+            arguments.getSource().sendSuccess(() -> getMsg(arguments.getSource(), "commands.zone_cleaner.stop", count), true);
             return 1;
         } catch (Exception e) {
              int count = activeTasks.size();
              activeTasks.clear();
-             arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.stop", count), true);
+             arguments.getSource().sendSuccess(() -> getMsg(arguments.getSource(), "commands.zone_cleaner.stop", count), true);
              return 1;
         }
     }
@@ -229,7 +298,7 @@ public class RemoveCommand {
             if (player == null) return 0;
 
             if (hasActiveTask(player)) {
-                arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.already_running"));
+                arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.already_running"));
                 return 0;
             }
 
@@ -248,7 +317,7 @@ public class RemoveCommand {
                 BlockPos end = endPositions.get(player.getUUID());
 
                 if (start == null || end == null) {
-                    arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.pos_not_set"));
+                    arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.pos_not_set"));
                     return 0;
                 }
                 x1 = start.getX(); y1 = start.getY(); z1 = start.getZ();
@@ -268,14 +337,14 @@ public class RemoveCommand {
                 z2 = parseCoord(parts[5], currentPos.z, minH, maxH);
                 blockName = parts[6];
             } else {
-                arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.generic", "Format invalide."));
+                arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.generic", "Format invalide."));
                 return 0;
             }
 
             Block targetBlock = BuiltInRegistries.BLOCK.getOptional(ResourceLocation.parse(blockName)).orElse(Blocks.AIR);
 
             if (targetBlock == Blocks.AIR && !blockName.equals("minecraft:air") && !blockName.equals("air")) {
-                arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.block_not_found", blockName));
+                arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.block_not_found", blockName));
                 return 0;
             }
 
@@ -286,12 +355,12 @@ public class RemoveCommand {
                           (long) (maxPos.getY() - minPos.getY() + 1) * 
                           (long) (maxPos.getZ() - minPos.getZ() + 1);
 
-            arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.start.block", blockName, volume), true);
+            arguments.getSource().sendSuccess(() -> getMsg(arguments.getSource(), "commands.zone_cleaner.start.block", blockName, volume), true);
             
             activeTasks.add(new BlockRemovalTask(world, minPos, maxPos, targetBlock, player));
 
         } catch (Exception e) {
-            arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.generic", e.getMessage()));
+            arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.generic", e.getMessage()));
             e.printStackTrace();
         }
         return 1;
@@ -299,7 +368,7 @@ public class RemoveCommand {
 
     private static int executeUndo(CommandContext<CommandSourceStack> arguments) {
         if (undoHistoryStack.isEmpty()) {
-            arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.undo.empty"));
+            arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.undo.empty"));
             return 0;
         }
 
@@ -307,13 +376,13 @@ public class RemoveCommand {
         if (player == null) return 0;
 
         if (hasActiveTask(player)) {
-            arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.already_running"));
+            arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.already_running"));
             return 0;
         }
 
         ServerLevel world = arguments.getSource().getLevel();
         List<BlockSnapshot> lastSnapshot = undoHistoryStack.removeLast();
-        arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.undo.start", lastSnapshot.size()), true);
+        arguments.getSource().sendSuccess(() -> getMsg(arguments.getSource(), "commands.zone_cleaner.undo.start", lastSnapshot.size()), true);
         activeTasks.add(new UndoTask(world, lastSnapshot, player));
         return 1;
     }
@@ -341,7 +410,7 @@ public class RemoveCommand {
                 BlockPos end = endPositions.get(player.getUUID());
 
                 if (start == null || end == null) {
-                    arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.pos_not_set"));
+                    arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.pos_not_set"));
                     return 0;
                 }
                 x1 = start.getX(); y1 = start.getY(); z1 = start.getZ();
@@ -361,14 +430,14 @@ public class RemoveCommand {
                 z2 = parseCoord(parts[5], currentPos.z, minH, maxH);
                 entityName = parts[6];
             } else {
-                arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.generic", "Format invalide."));
+                arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.generic", "Format invalide."));
                 return 0;
             }
             
             EntityType<?> targetType = BuiltInRegistries.ENTITY_TYPE.getOptional(ResourceLocation.parse(entityName)).orElse(null);
 
             if (targetType == null && !entityName.equals("all")) {
-                arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.entity_not_found", entityName));
+                arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.entity_not_found", entityName));
                 return 0;
             }
 
@@ -385,14 +454,16 @@ public class RemoveCommand {
             }
 
             final int finalCount = count;
-            arguments.getSource().sendSuccess(() -> getMsg("commands.zone_cleaner.finish.entity", finalCount), true);
+            arguments.getSource().sendSuccess(() -> getMsg(arguments.getSource(), "commands.zone_cleaner.finish.entity", finalCount), true);
 
         } catch (Exception e) {
-            arguments.getSource().sendFailure(getMsg("commands.zone_cleaner.error.generic", e.getMessage()));
+            arguments.getSource().sendFailure(getMsg(arguments.getSource(), "commands.zone_cleaner.error.generic", e.getMessage()));
             e.printStackTrace();
         }
         return 1;
     }
+
+    // --- CLASSES TACHES ---
 
     private interface ITickableTask {
         boolean processTick();
@@ -474,7 +545,7 @@ public class RemoveCommand {
             if (owner != null && owner.connection != null) {
                 int p = (int) ((processed * 100.0) / totalBlocks);
                 long remaining = totalBlocks - processed;
-                owner.displayClientMessage(getMsg("commands.zone_cleaner.progress", p, processed, removed, remaining), true);
+                owner.displayClientMessage(getMsg(owner, "commands.zone_cleaner.progress", p, processed, removed, remaining), true);
             }
         }
 
@@ -484,8 +555,8 @@ public class RemoveCommand {
                 undoHistoryStack.add(currentSessionUndo);
             }
             if (owner != null && owner.connection != null) {
-                owner.displayClientMessage(getMsg("commands.zone_cleaner.finish.block", removed), true);
-                owner.sendSystemMessage(getMsg("commands.zone_cleaner.finish.chat", removed));
+                owner.displayClientMessage(getMsg(owner, "commands.zone_cleaner.finish.block", removed), true);
+                owner.sendSystemMessage(getMsg(owner, "commands.zone_cleaner.finish.chat", removed));
             }
         }
     }
@@ -533,10 +604,10 @@ public class RemoveCommand {
             
             if (owner != null && owner.connection != null) {
                 int p = (int) ((index * 100.0) / total);
-                owner.displayClientMessage(getMsg("commands.zone_cleaner.undo.progress", p, index, total), true);
+                owner.displayClientMessage(getMsg(owner, "commands.zone_cleaner.undo.progress", p, index, total), true);
             }
             if (index >= total) {
-                if (owner != null) owner.displayClientMessage(getMsg("commands.zone_cleaner.undo.finish"), true);
+                if (owner != null) owner.displayClientMessage(getMsg(owner, "commands.zone_cleaner.undo.finish"), true);
                 return true;
             }
             return false;
