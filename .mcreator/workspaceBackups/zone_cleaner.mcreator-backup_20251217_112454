@@ -3,7 +3,7 @@
     {
       "name": "Remove",
       "type": "command",
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "remove",
       "metadata": {
@@ -34,7 +34,8 @@
       "commands.zone_cleaner.undo.empty": "§cNo operation to undo (History empty).",
       "commands.zone_cleaner.undo.start": "§eUndoing (%s blocks to restore)...",
       "commands.zone_cleaner.undo.progress": "§6Undoing: §e%s%% §7(%s/%s)",
-      "commands.zone_cleaner.undo.finish": "§aUndo complete!"
+      "commands.zone_cleaner.undo.finish": "§aUndo complete!",
+      "commands.zone_cleaner.error.already_running": "§cError: You already have a task running! Use /remove stop first."
     },
     "fr_fr": {
       "commands.zone_cleaner.pos.set.start": "§ePosition 1 (Départ) définie en : §f%s",
@@ -52,7 +53,8 @@
       "commands.zone_cleaner.undo.empty": "§cAucune opération à annuler (Historique vide).",
       "commands.zone_cleaner.undo.start": "§eAnnulation en cours (%s blocs à restaurer)...",
       "commands.zone_cleaner.undo.progress": "§6Restauration : §e%s%% §7(%s/%s)",
-      "commands.zone_cleaner.undo.finish": "§aAnnulation terminée !"
+      "commands.zone_cleaner.undo.finish": "§aAnnulation terminée !",
+      "commands.zone_cleaner.error.already_running": "§cErreur : Vous avez déjà une tâche en cours ! Utilisez /remove stop d\u0027abord."
     }
   },
   "metadata": {
@@ -72,16 +74,16 @@
     "version": "3.0.1",
     "description": "A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature.",
     "author": "Dreyka Oas",
-    "websiteURL": "https://mcreator.net",
+    "websiteURL": "https://modrinth.com/project/zone-cleaner",
     "license": "MIT License",
-    "serverSideOnly": false,
+    "serverSideOnly": true,
     "modPicture": "logo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.8",
-    "credits": "Made with MCreator. Optimized for high-performance servers.",
+    "credits": "Made with MCreaHub Optimized for high-performance servers.",
     "modElementsPackage": "oas.world.zone_cleaner"
   },
   "mcreatorVersion": 202500345720
