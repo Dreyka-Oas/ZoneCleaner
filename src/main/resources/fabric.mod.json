@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "zone_cleaner",
+  "version": "3.1.0",
+  "name": "Zone Cleaner",
+  "description": "A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature.",
+  "authors": [
+    "Dreyka Oas"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/project/zone-cleaner",
+    "sources": ""
+  },
+  "license": "MIT License",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "oas.work.zone_cleaner.ZoneCleanerMod"
+    ],
+    "client": [
+      "oas.work.zone_cleaner.ZoneCleanerModClient"
+    ]
+  },
+  "mixins": [
+    "zone_cleaner.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "zone_cleaner": "*"
+  }
+}
