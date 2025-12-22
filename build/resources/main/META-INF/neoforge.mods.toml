@@ -4,7 +4,7 @@ license="MIT License"
 
 [[mods]]
 modId="zone_cleaner"
-version="3.0.1"
+version="3.1.0"
 displayName="Zone Cleaner"
 displayURL="https://modrinth.com/project/zone-cleaner"
 logoFile="logo.png"
