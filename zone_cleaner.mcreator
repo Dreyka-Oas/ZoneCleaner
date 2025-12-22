@@ -1,0 +1,53 @@
+{
+  "mod_elements": [
+    {
+      "name": "Remove",
+      "type": "command",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "remove",
+      "metadata": {
+        "files": [
+          "src/main/java/oas/work/zone_cleaner/command/RemoveCommand.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {}
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/oas/work/zone_cleaner/ZoneCleanerMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/neoforge.mods.toml"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "zone_cleaner",
+    "modName": "Zone Cleaner",
+    "version": "3.1.0",
+    "description": "A powerful server admin tool designed to remove blocks and entities in large areas without server lag. Includes a smart progress bar and an Undo feature.",
+    "author": "Dreyka Oas",
+    "websiteURL": "https://modrinth.com/project/zone-cleaner",
+    "license": "MIT License",
+    "serverSideOnly": true,
+    "modPicture": "logo",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.4",
+    "credits": "Made with MCreaHub Optimized for high-performance servers.",
+    "modElementsPackage": "oas.work.zone_cleaner"
+  },
+  "mcreatorVersion": 202500345720
+}
