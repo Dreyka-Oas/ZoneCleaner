@@ -10,7 +10,6 @@ public class ZoneCleanerModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		// Start of user code block mod constructor
 		// End of user code block mod constructor
-
 		// Start of user code block mod init
 		// End of user code block mod init
 	}

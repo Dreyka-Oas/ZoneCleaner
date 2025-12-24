@@ -8,6 +8,10 @@ base.archivesName = 'modid'
 actualmodid = 'zone_cleaner'
 
 loom {
+    mixin {
+        defaultRefmapName = actualmodid + ".refmap.json"
+    }
+
     if (file("src/main/resources/META-INF/zone_cleaner.accesswidener").exists())
         accessWidenerPath = file("src/main/resources/META-INF/zone_cleaner.accesswidener")
 }

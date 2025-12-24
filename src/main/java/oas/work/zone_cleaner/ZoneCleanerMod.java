@@ -33,9 +33,7 @@ public class ZoneCleanerMod implements ModInitializer {
 		// Start of user code block mod constructor
 		// End of user code block mod constructor
 		LOGGER.info("Initializing ZoneCleanerMod");
-
 		ZoneCleanerModCommands.load();
-
 		tick();
 		// Start of user code block mod init
 		// End of user code block mod init
